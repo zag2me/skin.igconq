@@ -27,16 +27,6 @@
 		<include content="Time">
 			<param name="heading"></param>
 		</include>
-
-		<!-- Logo -->
-		<control type="image">
-			<left>120</left>
-			<top>105</top>
-			<width>50</width>
-			<height>50</height>
-			<texture>logo.png</texture>
-			<include>WindowFadeAnimation</include>
-		</control>
 		
 		<!-- Home layout -->
 		<control type="group">

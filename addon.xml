@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
-	id="skin.osmc"
-	version="16.9.2"
-	name="OSMC Skin"
-	provider-name="OSMC">
+	id="skin.igconq"
+	version="17.2.0"
+	name="igConq"
+	provider-name="Hitcher, Ignoble61">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 	</requires>
-	<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1.00" debugging="false">
+	<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1.00" debugging="true">
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<summary lang="en">The default skin for OSMC</summary>
-		<description lang="en">Original design: Bolteh[CR]Original Kodi skin: Hitcher</description>
-		<news>Fix crash in PVR guide window; Font updates</news>
+		<summary lang="en">A simple, clean and not-so-light mod of Conq</summary>
+		<disclaimer lang="en">Mouse and Touch device not supported</disclaimer>
+		<description lang="en">Original design: Bolteh[CR]Original Kodi skin: Hitcher[CR]Thanks to 'Black for the icons</description>
+		<news>Rebase on OSMC skin</news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>extras/backgrounds/Default.jpg</fanart>
+		</assets>
 	</extension>
-	<assets>
-		<icon>icon.png</icon>
-		<fanart>extras/backgrounds/Default.png</fanart>
-	</assets>
 </addon>

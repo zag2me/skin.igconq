@@ -21,8 +21,8 @@
 			<control type="image">
 				<centerleft>50%</centerleft>
 				<centertop>50%</centertop>
-				<width>150</width>
-				<height>150</height>
+				<width>200</width>
+				<height>200</height>
 				<texture colordiffuse="DialogColor1">$VAR[BusySpinner]</texture>
 			</control>
 
