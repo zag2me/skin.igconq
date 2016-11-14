@@ -126,6 +126,7 @@
 				<animation type="WindowOpen" condition="Window.Previous(startup)">
 					<effect type="fade" start="50" end="100" time="200" tween="cubic" easing="out"/>
 				</animation>
+				<visible>!Skin.HasSetting(Headings)</visible>
 			</control>
 
 			<control type="group">
@@ -350,7 +351,7 @@
 			<align>left</align>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>Integer.IsGreater(Container.NumItems,0)</visible>
+			<visible>Integer.IsGreater(Container.NumItems,0) + !Skin.HasSetting(MediaInfo)</visible>
 
 			<!-- Duration -->
 			<control type="image">

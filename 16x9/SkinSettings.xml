@@ -245,6 +245,16 @@
 
 
 				<!-- General -->
+				<!-- Headings -->
+				<control type="radiobutton" id="1301">
+					<width>1220</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>31060</label>
+					<onclick>Skin.ToggleSetting(Headings)</onclick>
+					<selected>!Skin.HasSetting(Headings)</selected>
+					<visible>ControlGroup(9).HasFocus(12)</visible>
+				</control>
 				<!-- Show watched indicators -->
 				<control type="radiobutton" id="1303">
 					<width>1220</width>
@@ -253,6 +263,16 @@
 					<label>Show watched indicators</label>
 					<onclick>Skin.ToggleSetting(WatchedIndicators)</onclick>
 					<selected>!Skin.HasSetting(WatchedIndicators)</selected>
+					<visible>ControlGroup(9).HasFocus(12)</visible>
+				</control>
+				<!-- Show media info -->
+				<control type="radiobutton" id="1301">
+					<width>1220</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>Show media info</label>
+					<onclick>Skin.ToggleSetting(MediaInfo)</onclick>
+					<selected>!Skin.HasSetting(MediaInfo)</selected>
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Enable Debug Grid -->
