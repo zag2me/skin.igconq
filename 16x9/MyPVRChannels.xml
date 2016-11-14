@@ -28,6 +28,8 @@
 						<fadetime>200</fadetime>
 						<texture>$VAR[PVRChannelIcon]</texture>
 						<aspectratio aligny="center">keep</aspectratio>
+						<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+						<bordersize>0,0,0,66</bordersize>
 					</control>
 				</control>
 

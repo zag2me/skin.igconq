@@ -68,6 +68,8 @@
 					<height>194</height>
 					<aspectratio align="right">keep</aspectratio>
 					<texture>$VAR[VideoPlayerIcon]</texture>
+					<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+					<bordersize>0,0,0,66</bordersize>
 				</control>
 
 				<!-- Live TV next information -->

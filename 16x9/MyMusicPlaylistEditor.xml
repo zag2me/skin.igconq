@@ -137,6 +137,8 @@
 						<height>300</height>
 						<texture fallback="DefaultAddonMusic.png">$INFO[Container(50).ListItem.Icon]</texture>
 						<aspectratio aligny="top">scale</aspectratio>
+						<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+						<bordersize>0,0,0,66</bordersize>
 					</control>
 
 					<!-- Details -->
@@ -162,6 +164,8 @@
 						<height>300</height>
 						<texture fallback="DefaultAddonMusic.png">$INFO[Container(100).ListItem.Icon]</texture>
 						<aspectratio aligny="top">scale</aspectratio>
+						<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+						<bordersize>0,0,0,66</bordersize>
 					</control>
 
 					<!-- Details -->

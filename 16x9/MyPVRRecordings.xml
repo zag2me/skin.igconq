@@ -24,6 +24,8 @@
 					<fadetime>200</fadetime>
 					<texture background="true">$INFO[Window(Home).Property(SkinHelper.PVR.Poster)]</texture>
 					<aspectratio align="center">keep</aspectratio>
+					<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+					<bordersize>0,0,0,66</bordersize>
 					<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Poster))</visible>
 				</control>
 				<control type="image">
@@ -34,6 +36,8 @@
 					<fadetime>200</fadetime>
 					<texture background="true">$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
 					<aspectratio align="center">keep</aspectratio>
+					<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+					<bordersize>0,0,0,66</bordersize>
 					<visible>String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Poster)) + !String.IsEmpty(Window(Home).Property(SkinHelper.PVR.Thumb))</visible>
 				</control>
 			</control>

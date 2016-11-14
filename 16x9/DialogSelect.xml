@@ -33,6 +33,8 @@
 				<height>600</height>
 				<texture>$INFO[Container(6).ListItem.Icon]</texture>
 				<aspectratio aligny="center">keep</aspectratio>
+				<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+				<bordersize>0,0,0,66</bordersize>
 				<visible>Control.IsVisible(6) + !String.Contains(Container(6).ListItem.Icon,Default)</visible>
 			</control>
 			<control type="image">

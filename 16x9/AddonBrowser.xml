@@ -24,6 +24,19 @@
 				<texture>$INFO[ListItem.Icon]</texture>
 				<colordiffuse>OverlayColorFO</colordiffuse>
 				<aspectratio aligny="center">keep</aspectratio>
+				<visible>String.StartsWith(ListItem.Icon,Default)</visible>
+			</control>
+			<control type="image">
+				<left>120</left>
+				<top>225</top>
+				<width>405</width>
+				<height>600</height>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordertexture border="1,1,1,69">views/DropShadow.png</bordertexture>
+				<bordersize>0,0,0,66</bordersize>
+				<colordiffuse>OverlayColorFO</colordiffuse>
+				<aspectratio aligny="center">keep</aspectratio>
+				<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 			</control>
 
 			<!-- List -->
