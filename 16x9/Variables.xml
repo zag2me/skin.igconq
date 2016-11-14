@@ -226,6 +226,7 @@
 
 
 	<variable name="StatusOverlay">
+		<value condition="Skin.HasSetting(WatchedIndicators)" />
 		<value condition="ListItem.IsParentFolder">noop</value>
 		<value condition="ListItem.IsFolder + Integer.IsGreater(ListItem.Property(WatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)">views/OverlayProgress4.png</value>
 		<value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">views/OverlayProgressWatched.png</value>
@@ -240,6 +241,7 @@
 	</variable>
 
 	<variable name="StatusOverlayWide">
+		<value condition="Skin.HasSetting(WatchedIndicators)" />
 		<value condition="ListItem.IsParentFolder">noop</value>
 		<value condition="ListItem.IsFolder + Integer.IsGreater(ListItem.Property(WatchedEpisodes),0) + Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)">views/OverlayProgressWide4.png</value>
 		<value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">views/OverlayProgressWideWatched.png</value>
