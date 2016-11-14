@@ -147,49 +147,14 @@
 
 
 				<!-- Background -->
-				<!-- Background image -->
-				<control type="radiobutton" id="1200">
-					<width>1220</width>
+				<!-- Custom image -->
+				<control type="button" id="1101">
+					<width>1050</width>
 					<height>66</height>
 					<onup>101</onup>
 					<textwidth>1120</textwidth>
-					<font>Font33</font>
-					<label>$LOCALIZE[19190] 1</label>
-					<onclick>Skin.SetString(BackgroundImage,1)</onclick>
-					<selected>String.IsEmpty(Skin.String(BackgroundImage)) | String.IsEqual(Skin.String(BackgroundImage),1)</selected>
-					<visible>ControlGroup(9).HasFocus(11)</visible>
-				</control>
-				<control type="radiobutton" id="1201">
-					<width>1220</width>
-					<height>66</height>
-					<onup>101</onup>
-					<textwidth>1120</textwidth>
-					<font>Font33</font>
-					<label>$LOCALIZE[19190] 2</label>
-					<onclick>Skin.SetString(BackgroundImage,2)</onclick>
-					<selected>String.IsEqual(Skin.String(BackgroundImage),2)</selected>
-					<visible>ControlGroup(9).HasFocus(11)</visible>
-				</control>
-				<control type="radiobutton" id="1202">
-					<width>1220</width>
-					<height>66</height>
-					<onup>101</onup>
-					<textwidth>1120</textwidth>
-					<font>Font33</font>
-					<label>$LOCALIZE[19190] 3</label>
-					<onclick>Skin.SetString(BackgroundImage,3)</onclick>
-					<selected>String.IsEqual(Skin.String(BackgroundImage),3)</selected>
-					<visible>ControlGroup(9).HasFocus(11)</visible>
-				</control>
-				<control type="radiobutton" id="1203">
-					<width>1220</width>
-					<height>66</height>
-					<onup>101</onup>
-					<textwidth>1120</textwidth>
-					<font>Font33</font>
-					<label>$LOCALIZE[19190] 4</label>
-					<onclick>Skin.SetString(BackgroundImage,4)</onclick>
-					<selected>String.IsEqual(Skin.String(BackgroundImage),4)</selected>
+					<label>31064</label>
+					<onclick>Skin.SetFile(CustomBackgroundImage,,special://skin/extras/backgrounds/)</onclick>
 					<visible>ControlGroup(9).HasFocus(11)</visible>
 				</control>
 				<!-- Background video -->

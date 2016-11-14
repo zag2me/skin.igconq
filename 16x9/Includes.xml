@@ -34,50 +34,51 @@
 			</control>
 
 			<!-- Water Image -->
-			<control type="image">
-				<include>FullscreenDimensions</include>
-				<texture background="true">$VAR[OSMCBackgroundImage]</texture>
-				<visible>![Player.HasVideo + Skin.HasSetting(BackgroundVideo)]</visible>
-				<visible>!$PARAM[animate]</visible>
-			</control>
-
-			<!-- Artists Slideshow -->
-			<control type="multiimage">
-				<include>FullscreenDimensions</include>
-				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-				<aspectratio>keep</aspectratio>
-				<timeperimage>10000</timeperimage>
-				<fadetime>2000</fadetime>
-				<randomize>true</randomize>
-				<visible>Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(EnableArtistFanart)</visible>
-			</control>
-
-			<!-- Background Image -->
-			<control type="image" id="10000">
-				<include>FullscreenDimensions</include>
-				<texture background="true" fallback="Transparent.png">$VAR[widgetBackground]</texture>
-				<fadetime>400</fadetime>
-				<visible>![Player.HasVideo + Skin.HasSetting(BackgroundVideo)]</visible>
-				<animation effect="fade" start="0" end="100" time="200" delay="70" condition="$PARAM[animate]">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="200" condition="$PARAM[animate]">WindowClose</animation>
-			</control>
-
-			<!-- Weather background -->
-			<include>skinshortcuts-template-weatherBackground</include>
-
-			<!-- Visualisation -->
-			<control type="visualisation">
-				<include>FullscreenDimensions</include>
-				<visible>Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)</visible>
-			</control>
-
 			<!-- Overlay -->
 			<control type="image">
 				<include>FullscreenDimensions</include>
-				<texture background="true">Background.png</texture>
+				<texture background="true">$VAR[BackgroundImage]</texture>
 				<animation effect="fade" start="0" end="100" time="200" condition="$PARAM[animate]">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="200" delay="70" condition="$PARAM[animate]">WindowClose</animation>
+				<animation effect="fade" start="100" end="80" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation)]">Conditional</animation>
 			</control>
+
+			<control type="group">
+				<animation effect="fade" start="100" end="0" condition="[Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation)]">Conditional</animation>
+				<animation effect="fade" start="70" end="70" condition="![Player.HasVideo + Skin.HasSetting(BackgroundVideo)] | [Player.HasAudio + Skin.HasSetting(BackgroundVisualisation)]">Conditional</animation>
+
+				<!-- Artists Slideshow -->
+				<control type="multiimage">
+					<include>FullscreenDimensions</include>
+					<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+					<aspectratio>keep</aspectratio>
+					<timeperimage>10000</timeperimage>
+					<fadetime>2000</fadetime>
+					<randomize>true</randomize>
+					<visible>Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(EnableArtistFanart)</visible>
+				</control>
+
+				<!-- Background Image -->
+				<control type="image" id="10000">
+					<include>FullscreenDimensions</include>
+					<texture background="true" fallback="Transparent.png">$VAR[widgetBackground]</texture>
+					<colordiffuse>FanartDiffuse</colordiffuse>
+					<fadetime>400</fadetime>
+					<visible>![Player.HasVideo + Skin.HasSetting(BackgroundVideo)]</visible>
+					<animation effect="fade" start="0" end="100" time="200" delay="70" condition="$PARAM[animate]">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200" condition="$PARAM[animate]">WindowClose</animation>
+				</control>
+
+				<!-- Weather background -->
+				<include>skinshortcuts-template-weatherBackground</include>
+
+				<!-- Visualisation -->
+				<control type="visualisation">
+					<include>FullscreenDimensions</include>
+					<visible>Player.HasAudio + Skin.HasSetting(BackgroundVisualisation) + !String.Contains(Window(Videos).Property(TvTunesIsAlive),True)</visible>
+				</control>
+			</control>
+
 		</definition>
 	</include>
 
@@ -87,11 +88,6 @@
 			<include content="WindowBackgroundImage">
 				<param name="animate">True</param>
 			</include>
-			<control type="image">
-				<include>FullscreenDimensions</include>
-				<include>WindowFadeAnimation</include>
-				<texture colordiffuse="DarkenColor">dialogs/DialogTextBackground.png</texture>
-			</control>
 		</control>
 	</include>
 

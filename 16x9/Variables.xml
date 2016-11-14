@@ -24,6 +24,11 @@
 		<value>OverlayColor</value>
 	</variable>
 
+	<variable name="BackgroundImage">
+		<value condition="!String.IsEmpty(Skin.String(CustomBackgroundImage))">$INFO[Skin.String(CustomBackgroundImage)]</value>
+		<value>special://skin/extras/backgrounds/Default.jpg</value>
+	</variable>
+
 	<variable name="OtherBackgroundImage">
 		<value condition="Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(EnableArtistFanart) + [Window.IsActive(visualisation) | Skin.HasSetting(BackgroundVisualisation)]" />
 		<value>$VAR[OSMCBackgroundImage]</value>
