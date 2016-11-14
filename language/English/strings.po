@@ -439,3 +439,7 @@ msgstr ""
 msgctxt "#31095"
 msgid "Manage widgets"
 msgstr ""
+
+msgctxt "#31096"
+msgid "Show fanart"
+msgstr ""
