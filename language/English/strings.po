@@ -443,3 +443,8 @@ msgstr ""
 msgctxt "#31096"
 msgid "Show fanart"
 msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31095"
+msgid "Enable curves"
+msgstr ""

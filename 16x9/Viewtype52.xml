@@ -6,6 +6,11 @@
 		<control type="group">
 			<visible>Control.IsVisible(52)</visible>
 
+			<!-- Curve -->
+			<include content="Curve-Horizontal">
+				<param name="height">800</param>
+			</include>
+
 			<!-- Wide list -->
 			<control type="fixedlist" id="52">
 				<left>0</left>

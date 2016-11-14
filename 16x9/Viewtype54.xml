@@ -6,6 +6,9 @@
 		<control type="group">
 			<visible>Control.IsVisible(54)</visible>
 
+			<!-- Curve -->
+			<include>Curve-VerticalNarrow</include>
+
 			<!-- Image - Songs -->
 			<include content="image-54">
 				<param name="fallback">DefaultMusicSongs.png</param>

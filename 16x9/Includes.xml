@@ -110,6 +110,47 @@
 		</control>
 	</include>
 
+	<!-- Curve - Horizontal -->
+	<include name="Curve-Vertical">
+		<param name="width">1420</param>
+		<definition>
+			<control type="image">
+				<right>20</right>
+				<top>20</top>
+				<width>$PARAM[width]</width>
+				<height>1040</height>
+				<texture border="40,0,0,0">common/Curve.png</texture>
+				<visible>Skin.HasSetting(ShowCurve)</visible>
+			</control>
+		</definition>
+	</include>
+
+	<!-- Curve - Horizontal Narrow -->
+	<include name="Curve-VerticalNarrow">
+		<control type="image">
+			<right>20</right>
+			<top>20</top>
+			<width>1280</width>
+			<height>1040</height>
+			<texture border="40,0,0,0">common/Curve.png</texture>
+			<visible>Skin.HasSetting(ShowCurve)</visible>
+		</control>
+	</include>
+
+	<!-- Curve - Vertical -->
+	<include name="Curve-Horizontal">
+		<definition>
+			<control type="image">
+				<left>20</left>
+				<top>20</top>
+				<width>1880</width>
+				<height>$PARAM[height]</height>
+				<texture border="0,0,0,40">common/CurveHorz.png</texture>
+				<visible>Skin.HasSetting(ShowCurve)</visible>
+			</control>
+		</definition>
+	</include>
+
 	<!-- Time -->
 	<include name="Time">
 		<param name="heading">$VAR[HeadingLabel]</param>
@@ -484,32 +525,56 @@
 
 	<include name="dialogButtonBackground">
 		<definition>
-			<control type="image">
-				<left>-1000</left>
-				<bottom>90</bottom>
-				<width>3980</width>
-				<height>86</height>
-				<texture colordiffuse="TextColor1" border="2">common/Border.png</texture>
-				<visible>ControlGroup($PARAM[id]).HasFocus</visible>
-				<include>VisibleFadeAnimation</include>
+			<control type="group">
+				<visible>!Skin.HasSetting(ShowCurve)</visible>
+				<control type="image">
+					<left>-1000</left>
+					<bottom>90</bottom>
+					<width>3980</width>
+					<height>86</height>
+					<texture colordiffuse="TextColor1" border="2">common/Border.png</texture>
+					<visible>ControlGroup($PARAM[id]).HasFocus</visible>
+					<include>VisibleFadeAnimation</include>
+				</control>
+				<control type="image">
+					<left>-1000</left>
+					<bottom>90</bottom>
+					<width>3980</width>
+					<height>86</height>
+					<texture colordiffuse="TextColor2" border="2">common/Border.png</texture>
+					<visible>!ControlGroup($PARAM[id]).HasFocus</visible>
+					<include>VisibleFadeAnimation</include>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<bottom>90</bottom>
+					<width>3980</width>
+					<height>86</height>
+					<visible>ControlGroup($PARAM[id]).HasFocus</visible>
+					<texture colordiffuse="DarkenColor">dialogs/DialogTextBackground.png</texture>
+					<include>VisibleFadeAnimation</include>
+				</control>
 			</control>
-			<control type="image">
-				<left>-1000</left>
-				<bottom>90</bottom>
-				<width>3980</width>
-				<height>86</height>
-				<texture colordiffuse="TextColor2" border="2">common/Border.png</texture>
-				<visible>!ControlGroup($PARAM[id]).HasFocus</visible>
-				<include>VisibleFadeAnimation</include>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<bottom>90</bottom>
-				<width>3980</width>
-				<height>86</height>
-				<visible>ControlGroup($PARAM[id]).HasFocus</visible>
-				<texture colordiffuse="DarkenColor">dialogs/DialogTextBackground.png</texture>
-				<include>VisibleFadeAnimation</include>
+			<control type="group">
+				<visible>Skin.HasSetting(ShowCurve)</visible>
+				<!-- Curve -->
+				<control type="image">
+					<left>20</left>
+					<bottom>20</bottom>
+					<width>1940</width>
+					<height>160</height>
+					<texture border="0,0,40,0">common/CurveHorzAlt.png</texture>
+					<visible>Skin.HasSetting(ShowCurve)</visible>
+				</control>
+				<control type="image">
+					<left>20</left>
+					<bottom>20</bottom>
+					<width>1940</width>
+					<height>160</height>
+					<texture border="0,0,40,0">common/CurveHorzAlt.png</texture>
+					<include>VisibleFadeAnimation</include>
+					<visible>Skin.HasSetting(ShowCurve) + ControlGroup($PARAM[id]).HasFocus</visible>
+				</control>
 			</control>
 		</definition>
 	</include>

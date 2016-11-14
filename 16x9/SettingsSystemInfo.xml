@@ -9,6 +9,9 @@
 		<!-- Background -->
 		<include>WindowBackgroundImage</include>
 
+		<!-- Curve -->
+		<include>Curve-Vertical</include>
+
 		<!-- Time -->
 		<include>Time</include>
 

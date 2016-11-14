@@ -6,6 +6,9 @@
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
 
+			<!-- Curve -->
+			<include>Curve-VerticalNarrow</include>
+
 			<!-- Image - Songs -->
 			<include content="image-51">
 				<param name="fallback">DefaultMusicSongs.png</param>
@@ -16,16 +19,6 @@
 				<param name="fallback">DefaultFolder.png</param>
 				<param name="visible">!Container.Content(songs)</param>
 			</include>
-
-			<control type="image">
-				<left>120</left>
-				<top>225</top>
-				<width>405</width>
-				<height>600</height>
-				<texture>$INFO[ListItem.Icon]</texture>
-				<colordiffuse>OverlayColorFO</colordiffuse>
-				<aspectratio aligny="center">keep</aspectratio>
-			</control>
 
 			<!-- List -->
 			<control type="fixedlist" id="50">

@@ -6,6 +6,10 @@
 		<control type="group">
 			<visible>Control.IsVisible(55)</visible>
 
+			<include content="Curve-Horizontal">
+				<param name="height">844</param>
+			</include>
+
 			<!-- Thumbs -->
 			<control type="panel" id="55">
 				<left>150</left>

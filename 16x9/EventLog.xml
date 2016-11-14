@@ -7,6 +7,9 @@
 		<!-- Background -->
 		<include>WindowBackgroundImage</include>
 
+		<!-- Curve -->
+		<include>Curve-VerticalNarrow</include>
+
 		<!-- Image -->
 		<control type="image">
 			<left>120</left>

@@ -9,6 +9,11 @@
 		<!-- Background -->
 		<include>WindowBackgroundImage</include>
 
+		<!-- Curve -->
+		<include content="Curve-Vertical">
+			<param name="width">650</param>
+		</include>
+
 		<!-- Main group -->
 		<control type="group">
 			<include>WindowFadeAnimation</include>

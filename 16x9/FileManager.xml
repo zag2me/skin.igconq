@@ -8,6 +8,11 @@
 		<!-- Background -->
 		<include>WindowBackgroundImage</include>
 
+		<!-- Curve -->
+		<include content="Curve-Vertical">
+			<param name="width">940</param>
+		</include>
+
 		<!-- Time -->
 		<include content="Time">
 			<param name="heading">$LOCALIZE[7]</param>

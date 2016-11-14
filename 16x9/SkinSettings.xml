@@ -10,6 +10,9 @@
 		<control type="group">
 			<!-- Background -->
 			<include>WindowBackgroundImage</include>
+
+			<!-- Curve -->
+			<include>Curve-Vertical</include>
 			
 
 			<include content="Time">
@@ -256,7 +259,7 @@
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Show watched indicators -->
-				<control type="radiobutton" id="1303">
+				<control type="radiobutton" id="1302">
 					<width>1220</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -266,13 +269,23 @@
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Show media info -->
-				<control type="radiobutton" id="1301">
+				<control type="radiobutton" id="1303">
 					<width>1220</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
 					<label>Show media info</label>
 					<onclick>Skin.ToggleSetting(MediaInfo)</onclick>
 					<selected>!Skin.HasSetting(MediaInfo)</selected>
+					<visible>ControlGroup(9).HasFocus(12)</visible>
+				</control>
+				<!-- Show curved segments -->
+				<control type="radiobutton" id="1307">
+					<width>1220</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>$LOCALIZE[31095]</label>
+					<onclick>Skin.ToggleSetting(ShowCurve)</onclick>
+					<selected>Skin.HasSetting(ShowCurve)</selected>
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
 				<!-- Enable Debug Grid -->
