@@ -128,13 +128,19 @@
 			<control type="image">
 				<left>34</left>
 				<width>202</width>
+				<height>235</height>
+				<texture border="1,1,1,36">views/DropShadowSmall.png</texture>
+				<visible>$PARAM[visible]</visible>
+				<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
+			</control>
+			<control type="image">
+				<left>34</left>
+				<width>202</width>
 				<height>202</height>
 				<colordiffuse>$PARAM[colordiffuse]</colordiffuse>
 				<texture fallback="$PARAM[fallback]" background="true">$VAR[mediaImages]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>$PARAM[visible]</visible>
-				<bordertexture border="1,1,1,36">views/DropShadowSmall.png</bordertexture>
-				<bordersize>0,0,0,33</bordersize>
 				<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 			</control>
 		</definition>
