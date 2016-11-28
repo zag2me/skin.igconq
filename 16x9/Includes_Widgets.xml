@@ -474,7 +474,9 @@
 
 	<!-- Widget layout -->
 	<include name="widgetLayout-tall">
-		<include>widgetLayout-tall-OSMC</include>
+		<include condition="String.IsEmpty(Skin.String(menuStyle))">widgetLayout-tall-OSMC</include>
+		<include condition="String.IsEqual(Skin.String(menuStyle),vertical)">widgetLayout-tall-Vertical</include>
+		<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)">widgetLayout-tall-Horizontal</include>
 	</include>
 
 	<include name="widgetLayout-tall-OSMC">
@@ -483,9 +485,23 @@
 		<width>1218</width>
 		<height>306</height>
 	</include>
+	<include name="widgetLayout-tall-Vertical">
+		<left>2605</left>
+		<top>608</top>
+		<width>1218</width>
+		<height>306</height>
+	</include>
+	<include name="widgetLayout-tall-Horizontal">
+		<left>46.5</left>
+		<top>300</top>
+		<width>1827</width>
+		<height>306</height>
+	</include>
 
 	<include name="widgetLayout-wide">
-		<include>widgetLayout-wide-OSMC</include>
+		<include condition="String.IsEmpty(Skin.String(menuStyle))">widgetLayout-wide-OSMC</include>
+		<include condition="String.IsEqual(Skin.String(menuStyle),vertical)">widgetLayout-wide-Vertical</include>
+		<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)">widgetLayout-wide-Horizontal</include>
 	</include>
 
 	<include name="widgetLayout-wide-OSMC">
@@ -494,11 +510,26 @@
 		<width>1035</width>
 		<height>219</height>
 	</include>
+	<include name="widgetLayout-wide-Vertical">
+		<left>2788</left>
+		<top>695</top>
+		<width>1035</width>
+		<height>219</height>
+	</include>
+	<include name="widgetLayout-wide-Horizontal">
+		<left>97.5</left>
+		<top>387</top>
+		<width>1725</width>
+		<height>306</height>
+	</include>
 
 	<!-- Widget on control -->
 	<include name="widgetOnControl">
 		<definition>
-			<include content="widgetOnControl-OSMC">
+			<include condition="!String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetOnControl-OSMC">
+				<param name="container">$PARAM[container]</param>
+			</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetOnControl-Horizontal">
 				<param name="container">$PARAM[container]</param>
 			</include>
 		</definition>
@@ -513,11 +544,23 @@
 			<onright>noop</onright>
 		</definition>
 	</include>
+	<include name="widgetOnControl-Horizontal">
+		<definition>
+			<onback>9000</onback>
+			<onup condition="Integer.IsGreater(Container($PARAM[container]).NumItems,1)">9005</onup>
+			<ondown>9000</ondown>
+			<onleft>noop</onleft>
+			<onright>noop</onright>
+		</definition>
+	</include>
 
 	<!-- Widget Layout Slide -->
 	<include name="widgetLayoutSlide-tall">
 		<definition>
-			<include content="widgetLayoutSlide-tall-OSMC">
+			<include condition="!String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetLayoutSlide-tall-OSMC">
+				<param name="container">$PARAM[container]</param>
+			</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetLayoutSlide-tall-Horizontal">
 				<param name="container">$PARAM[container]</param>
 			</include>
 		</definition>
@@ -534,9 +577,26 @@
 		</definition>
 	</include>
 
+	<include name="widgetLayoutSlide-tall-Horizontal">
+		<definition>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,1)">conditional</animation>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,2)">conditional</animation>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,3)">conditional</animation>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,4)">conditional</animation>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,5)">conditional</animation>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,6)">conditional</animation>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,7)">conditional</animation>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,8)">conditional</animation>
+			<animation effect="slide" start="0,0" end="101.5,0" time="0" condition="Integer.IsLess(Container($PARAM[container]).NumItems,8)">conditional</animation>
+		</definition>
+	</include>
+
 	<include name="widgetLayoutSlide-wide">
 		<definition>
-			<include content="widgetLayoutSlide-wide-OSMC">
+			<include condition="!String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetLayoutSlide-wide-OSMC">
+				<param name="container">$PARAM[container]</param>
+			</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetLayoutSlide-wide-Horizontal">
 				<param name="container">$PARAM[container]</param>
 			</include>
 		</definition>
@@ -549,11 +609,26 @@
 			<animation effect="slide" start="0,0" end="-2015,0" time="0" condition="IntegerGreaterThan(Container($PARAM[container]).NumItems,2)">conditional</animation>
 		</definition>
 	</include>
+	<include name="widgetLayoutSlide-wide-Horizontal">
+		<definition>
+			<animation effect="slide" start="0,0" end="2690,0" time="0" condition="StringCompare(Container($PARAM[container]).NumItems,1)">conditional</animation>
+			<animation effect="slide" start="0,0" end="2517.5,0" time="0" condition="StringCompare(Container($PARAM[container]).NumItems,2)">conditional</animation>
+			<animation effect="slide" start="0,0" end="2345,0" time="0" condition="StringCompare(Container($PARAM[container]).NumItems,3)">conditional</animation>
+			<animation effect="slide" start="0,0" end="2172.5,0" time="0" condition="StringCompare(Container($PARAM[container]).NumItems,4)">conditional</animation>
+			<animation effect="slide" start="0,0" end="2000,0" time="0" condition="IntegerGreaterThan($PARAM[container]).NumItems,4)">conditional</animation>
+			<!-- Layout - wide -->
+			<!--property name="layoutWidth" tag="property" attribute="name|layout" value="wide">345</property-->
+		</definition>
+	</include>
 
 	<!-- Widget Animation -->
 	<include name="widgetAnimation">
 		<definition>
-			<include content="widgetAnimation-OSMC">
+			<include condition="!String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetAnimation-OSMC">
+				<param name="container1">$PARAM[container1]</param>
+				<param name="container2">$PARAM[container2]</param>
+			</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetAnimation-Horizontal">
 				<param name="container1">$PARAM[container1]</param>
 				<param name="container2">$PARAM[container2]</param>
 			</include>
@@ -583,11 +658,40 @@
 			</animation>
 		</definition>
 	</include>
+	<include name="widgetAnimation-Horizontal">
+		<definition>
+			<!-- Visible/Hidden (group) animation -->
+			<animation type="Conditional" condition="Control.IsVisible($PARAM[container1])">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="slide" start="0,-600" end="0,0" time="400" />
+			</animation>
+			<animation type="Conditional" condition="!Control.IsVisible($PARAM[container1])">
+				<effect type="fade" start="100" end="0" time="200" />
+				<effect type="slide" start="0,0" end="0,-600" time="400" />
+			</animation>
+
+			<!-- Selected/deselected widget animation -->
+			<animation type="Conditional" condition="String.IsEqual(Container($PARAM[container1]).ListItem.Property(widgetID),$PARAM[container2])">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="slide" start="0,-600" end="0,0" time="400" />
+			</animation>
+			<animation type="Conditional" condition="!String.IsEqual(Container($PARAM[container1]).ListItem.Property(widgetID),$PARAM[container2])">
+				<effect type="fade" start="100" end="0" time="200" />
+				<effect type="slide" start="0,0" end="0,-600" time="400" />
+			</animation>
+		</definition>
+	</include>
 
 	<!-- Widget heading/details -->
 	<include name="widgetHeading">
 		<definition>
-			<include content="widgetHeading-OSMC">
+			<include condition="String.IsEmpty(Skin.String(menuStyle))" content="widgetHeading-OSMC">
+				<param name="container">$PARAM[container]</param>
+			</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),vertical)" content="widgetHeading-Vertical">
+				<param name="container">$PARAM[container]</param>
+			</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)" content="widgetHeading-Horizontal">
 				<param name="container">$PARAM[container]</param>
 			</include>
 		</definition>
@@ -600,6 +704,28 @@
 			<width>1218</width>
 			<height>280</height>
 			<include content="widgetHeading-content">
+				<param name="container">$PARAM[container]</param>
+			</include>
+		</definition>
+	</include>
+	<include name="widgetHeading-Vertical">
+		<definition>
+			<left>590</left>
+			<top>900</top>
+			<width>1218</width>
+			<height>280</height>
+			<include content="widgetHeading-content">
+				<param name="container">$PARAM[container]</param>
+			</include>
+		</definition>
+	</include>
+	<include name="widgetHeading-Horizontal">
+		<definition>
+			<left>50</left>
+			<top>600</top>
+			<width>1820</width>
+			<height>280</height>
+			<include content="widgetHeading-content-horizontal">
 				<param name="container">$PARAM[container]</param>
 			</include>
 		</definition>
@@ -665,6 +791,58 @@
 				<height>280</height>
 				<font>Font33</font>
 				<align>right</align>
+				<aligny>top</aligny>
+				<label>$VAR[widgetDetails]</label>
+				<textcolor>TextColor1</textcolor>
+			</control>
+			
+		</definition>
+	</include>
+	<include name="widgetHeading-content-horizontal">
+		<definition>
+			<visible>Integer.IsGreater(Container($PARAM[container]).NumItems,0)</visible>
+			<include>VisibleFadeAnimation</include>
+
+			<!-- Indicators -->
+			<control type="group">
+				<visible>Integer.IsGreater(Container($PARAM[container]).NumItems,1)</visible>
+				<include>VisibleFadeAnimation</include>
+				<control type="button">
+					<top>15</top>
+					<left>0</left>
+					<width>30</width>
+					<height>16</height>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<texturenofocus colordiffuse="TextColor2">up.png</texturenofocus>
+					<texturefocus>up.png</texturefocus>
+					<onclick>Control.Move($PARAM[container],-1)</onclick>
+				</control>
+				<control type="button">
+					<top>15</top>
+					<left>40</left>
+					<width>30</width>
+					<height>16</height>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<texturenofocus colordiffuse="TextColor2">down.png</texturenofocus>
+					<texturefocus>down.png</texturefocus>
+					<onclick>Control.Move($PARAM[container],1)</onclick>
+				</control>
+			</control>
+
+			<!-- Widget details -->
+			<control type="label">
+				<top>0</top>
+				<right>0</right>
+				<width>1820</width>
+				<height>280</height>
+				<font>Font33</font>
+				<align>center</align>
 				<aligny>top</aligny>
 				<label>$VAR[widgetDetails]</label>
 				<textcolor>TextColor1</textcolor>

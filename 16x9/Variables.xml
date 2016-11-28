@@ -458,7 +458,8 @@
 	</variable>
 
 	<variable name="menuStyle">
-		<value condition="String.IsEmpty(Skin.String(menuStyle))">Vertical</value>
+		<value condition="String.IsEmpty(Skin.String(menuStyle))">Vertical (modern)</value>
+		<value condition="String.IsEqual(Skin.String(menuStyle),vertical)">Vertical (classic)</value>
 		<value condition="String.IsEqual(Skin.String(menuStyle),horizontal)">Horizontal</value>
 		<value condition="String.IsEqual(Skin.String(menuStyle),lumos)">Cross-bar</value>
 	</variable>

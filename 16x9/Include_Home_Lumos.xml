@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="HomeLumos">
+		<control type="group">
+			<!-- Widgets -->
+			<include>skinshortcuts-template-lumos</include>
+
+			<!-- Main list -->
+			<control type="fixedlist" id="9000">
+				<left>-1000000</left>
+				<top>612</top>
+				<width>2030</width>
+				<height>306</height>
+				<focusposition>2</focusposition>
+				<defaultcontrol>1</defaultcontrol>
+				<include>skinshortcuts-template-oncontrol</include>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<itemlayout width="203" height="306">
+					<control type="group">
+						<animation effect="fade" start="100" end="30" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(-4).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="40" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(-3).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="50" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(-2).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="60" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(-1).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="60" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(1).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="50" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(2).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="40" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(3).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="30" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(4).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="20" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(5).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="10" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(6).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="5" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(7).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="5" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(8).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="0" condition="String.IsEqual(Container(9000).ListItemNoWrap(9).Property(submenuVisibility),ListItem.Property(submenuVisibility))">Conditional</animation>
+
+						<control type="image">
+							<visible>!String.IsEmpty(ListItem.Property(igconq))</visible>
+							<width>203</width>
+							<height>306</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+					</control>
+				</itemlayout>
+
+				<focusedlayout width="203" height="306">
+					<control type="image">
+						<visible>!String.IsEmpty(ListItem.Property(igconq))</visible>
+						<width>203</width>
+						<height>306</height>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</focusedlayout>
+
+				<content>
+					<include>skinshortcuts-mainmenu</include>
+				</content>
+			</control>
+
+			<!-- Widget details -->
+			<control type="label">
+				<animation effect="slide" end="133,0" time="200" condition="String.IsEqual(Container(9000).ListItem.Property(layout),wide)">Conditional</animation>
+				<top>900</top>
+				<left>522</left>
+				<width>1000</width>
+				<height>280</height>
+				<font>Font33</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$VAR[widgetDetails,,[CR]][LIGHT]$INFO[Container(9000).ListItem.Property(widgetName)][/LIGHT]</label>
+				<visible>!String.IsEqual(Container(9000).ListItem.Property(widget),WeatherWidget)</visible>
+			</control> 
+		</control>
+		
+	</include>
+
+</includes>

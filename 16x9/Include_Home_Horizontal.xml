@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="HomeHorizontal">
+		<!-- Curve -->
+		<control type="image">
+			<left>20</left>
+			<top>765</top>
+			<width>1880</width>
+			<height>295</height>
+			<texture border="0,40,0,0">common/CurveHorzHome.png</texture>
+			<visible>Skin.HasSetting(ShowCurve)</visible>
+		</control>
+
+		<!-- Widget control -->
+		<include>skinshortcuts-template-widgetControl</include>
+
+		<!-- Main list -->
+		<control type="wraplist" id="9000">
+			<left>-70</left>
+			<top>765</top>
+			<width>2060</width>
+			<height>360</height>
+			<ondown>9001</ondown>
+			<onup condition="Control.IsVisible(9006)">9006</onup>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<focusposition>2</focusposition>
+			<defaultcontrol>3</defaultcontrol>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="sine" easing="out">240</scrolltime>
+
+			<itemlayout width="400" height="120">
+				<control type="label">
+					<top>0</top>
+					<width>400</width>
+					<height>120</height>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font42</font>
+					<textcolor>HomeNF</textcolor>
+				</control>
+			</itemlayout>
+
+			<focusedlayout width="460" height="120">
+				<control type="label">
+					<top>0</top>
+					<width>460</width>
+					<height>120</height>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font72</font>
+					<textcolor>TextColor1</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9000)">Conditional</animation>
+				</control>
+			</focusedlayout>
+
+			<content>
+				<include>skinshortcuts-mainmenu</include>
+			</content>
+
+		</control>
+
+		<!-- Sub menu -->
+		<control type="fixedlist" id="9001">
+			<left>-70</left>
+			<top>850</top>
+			<width>2060</width>
+			<height>360</height>
+			<onup>9000</onup>
+			<ondown>noop</ondown>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<focusposition>2</focusposition>
+			<orientation>horizontal</orientation>
+			<defaultcontrol always="true">1</defaultcontrol>
+			<scrolltime tween="sine" easing="out">240</scrolltime>
+			<visible allowhiddenfocus="true">Control.HasFocus(9001)</visible>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" time="320" tween="sine" easing="in" />
+			</animation>
+
+			<itemlayout width="400" height="120">
+				<control type="label">
+					<top>0</top>
+					<width>400</width>
+					<height>120</height>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font30</font>
+					<textcolor>HomeNF</textcolor>
+				</control>
+			</itemlayout>
+
+			<focusedlayout width="460" height="120">
+				<control type="label">
+					<top>0</top>
+					<width>460</width>
+					<height>120</height>
+					<align>center</align>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font42</font>
+					<textcolor>TextColor1</textcolor>
+					<shadowcolor>ShadowColor</shadowcolor>
+					<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!Control.HasFocus(9001)">Conditional</animation>
+				</control>
+			</focusedlayout>
+
+			<content>
+				<include>skinshortcuts-submenu</include>
+			</content>
+
+		</control>
+
+		<!-- Widgets -->
+		<control type="group" id="9002">
+			<include>skinshortcuts-template-vertical</include>
+		</control>
+
+		<!-- Reloading indicator -->
+		<control type="group">
+			<left>1820</left>
+			<top>980</top>
+			<include>skinshortcuts-template-reloading</include>
+		</control>
+
+	</include>
+
+</includes>

@@ -2,7 +2,9 @@
 <window>
 	<!-- skinsettings -->
 	<defaultcontrol always="true">9</defaultcontrol>
-	<onunload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu&amp;levels=1&amp;options=noGroups)</onunload>
+	<onunload condition="String.IsEqual(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu&amp;levels=1&amp;minitems=20&amp;options=noGroups)</onunload>
+	<onunload condition="!String.IsEqual(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu&amp;levels=1&amp;options=noGroups)</onunload>
+
 
 	<controls>
 
@@ -135,6 +137,32 @@
 					<visible>ControlGroup(9).HasFocus(10) + !System.HasAddon(script.skinshortcuts)</visible>
 					<focusedcolor>TextColor1</focusedcolor>
 					<textcolor>TextColor2</textcolor>
+				</control>
+				<!-- Main menu style -->
+				<control type="button" id="1004">
+					<width>1220</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<onclick condition="String.IsEmpty(Skin.String(menuStyle))">Skin.SetString(menuStyle,vertical)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(menuStyle),vertical)">Skin.SetString(menuStyle,horizontal)</onclick>
+					<!--onclick condition="String.IsEqual(Skin.String(menuStyle),horizontal)">Skin.SetString(menuStyle,lumos)</onclick-->
+					<onclick condition="String.IsEqual(Skin.String(menuStyle),horizontal)">Skin.Reset(menuStyle)</onclick>
+					<!--onclick condition="String.IsEqual(Skin.String(menuStyle),lumos)">Skin.Reset(menuStyle)</onclick-->
+					<onclick>SetProperty(skinshortcuts-reloadmainmenu,True,Home)</onclick>
+					<label>$LOCALIZE[31037]</label>
+					<label2>$VAR[menuStyle]</label2>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
+				<!-- Small main menu -->
+				<control type="radiobutton" id="1003">
+					<width>1220</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<label>$LOCALIZE[31050]</label>
+					<onclick>Skin.ToggleSetting(SmallMainMenu)</onclick>
+					<selected>Skin.HasSetting(SmallMainMenu)</selected>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+					<visible>String.IsEqual(Skin.String(menuStyle),vertical)</visible>
 				</control>
 				<!-- Hide submenu headings -->
 				<control type="radiobutton" id="1003">

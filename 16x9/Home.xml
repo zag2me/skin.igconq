@@ -5,10 +5,14 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 
 	<!-- Skin Shortcuts -->
-	<onload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu&amp;levels=1&amp;options=noGroups)</onload>
+	<onunload condition="String.IsEqual(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu&amp;levels=1&amp;minitems=20&amp;options=noGroups)</onunload>
+	<onunload condition="!String.IsEqual(Skin.String(menuStyle),vertical)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu&amp;levels=1&amp;options=noGroups)</onunload>
 
 	<!-- Skin Helper Service -->
 	<onload>Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
+
+	<!-- Ensure lumos menu isn't set -->
+	<onload condition="String.IsEqual(Skin.String(menuStyle),lumos)">Skin.Reset(menuStyle)</onload>
 
 	<controls>
 
@@ -31,7 +35,10 @@
 		<!-- Home layout -->
 		<control type="group">
 			<include>WindowFadeAnimation</include>
-			<include>HomeOSMC</include>
+			<include condition="String.IsEmpty(Skin.String(menuStyle))">HomeOSMC</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),vertical)">HomeVertical</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),horizontal)">HomeHorizontal</include>
+			<include condition="String.IsEqual(Skin.String(menuStyle),lumos)">HomeLumos</include>
 		</control>
 
 		<!-- RSS -->

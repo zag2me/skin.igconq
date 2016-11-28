@@ -2,9 +2,11 @@
 
 	<include file="Defaults.xml" />
 	<include file="Include_Home_OSMC.xml" />
+	<include file="Include_Home_Vertical.xml" />
+	<include file="Include_Home_Horizontal.xml" />
+	<include file="Include_Home_Lumos.xml" />
 	<include file="Includes_Widgets.xml" />
-	<include condition="System.HasAddon(script.skinshortcuts)" file="script-skinshortcuts-includes.xml" />
-	<include condition="!System.HasAddon(script.skinshortcuts)" file="script-skinshortcuts-static.xml" />
+	<include file="script-skinshortcuts-includes.xml" />
 	<include file="Include_DialogSettings.xml" />
 	<include file="Viewtype50.xml" />
 	<include file="Viewtype51.xml" />
@@ -577,6 +579,24 @@
 				</control>
 			</control>
 		</definition>
+	</include>
+
+	<!-- Classic vertical main menu styles -->
+	<include name="SmallMainMenu">
+		<left>120</left>
+		<top>643</top>
+		<width>460</width>
+		<height>360</height>
+		<focusposition>1</focusposition>
+		<defaultcontrol>3</defaultcontrol>
+	</include>
+	<include name="LargeMainMenu">
+		<left>120</left>
+		<top>-77</top>
+		<width>460</width>
+		<height>1200</height>
+		<focusposition>7</focusposition>
+		<defaultcontrol>1</defaultcontrol>
 	</include>
 
 </includes>
