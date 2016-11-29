@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
 	id="skin.igconq"
-	version="17.2.0"
+	version="17.2.1"
 	name="igConq"
 	provider-name="Hitcher, Ignoble61">
 	<requires>
@@ -15,7 +15,7 @@
 		<summary lang="en">A simple, clean and not-so-light mod of Conq</summary>
 		<disclaimer lang="en">Mouse and Touch device not supported</disclaimer>
 		<description lang="en">Original design: Bolteh[CR]Original Kodi skin: Hitcher[CR]Thanks to 'Black for the icons</description>
-		<news>Rebase on OSMC skin</news>
+		<news>Restore original font and dark color scheme; minor fixes</news>
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>extras/backgrounds/Default.jpg</fanart>
