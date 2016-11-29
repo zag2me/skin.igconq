@@ -185,9 +185,9 @@
 					<width>920</width>
 					<height>20</height>
 					<info>Player.Progress</info>
-					<texturebg border="2">osd/OSDProgressBack.png</texturebg>
+					<texturebg border="2" colordiffuse="DialogColor2">osd/OSDProgressBack.png</texturebg>
 					<lefttexture>-</lefttexture>
-					<midtexture border="2">osd/OSDProgressBar.png</midtexture>
+					<midtexture border="2" colordiffuse="DialogColor1">osd/OSDProgressBar.png</midtexture>
 					<righttexture>-</righttexture>
 					<overlaytexture>-</overlaytexture>
 				</control>

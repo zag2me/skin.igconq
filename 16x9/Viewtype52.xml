@@ -125,7 +125,7 @@
 				<width>225</width>
 				<height>333</height>
 				<colordiffuse>DiffusePosterNF</colordiffuse>
-				<texture background="true" fallback="$PARAM[fallback]">$VAR[mediaImages]</texture>
+				<texture background="true" fallback="$PARAM[fallback]" colordiffuse="TextColor1">$VAR[mediaImages]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>$PARAM[visible]</visible>
 				<visible>String.StartsWith(ListItem.Icon,Default)</visible>
@@ -137,6 +137,7 @@
 				<width>225</width>
 				<height>366</height>
 				<texture border="1,1,1,36">views/DropShadowSmall.png</texture>
+				<visible>$PARAM[visible]</visible>
 				<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 			</control>
 			<control type="image">
@@ -146,7 +147,7 @@
 				<height>333</height>
 				<colordiffuse>DiffusePosterNF</colordiffuse>
 				<texture background="true" fallback="$PARAM[fallback]">$VAR[mediaImages]</texture>
-				<aspectratio align="center">keep</aspectratio>
+				<aspectratio align="center">scale</aspectratio>
 				<visible>$PARAM[visible]</visible>
 				<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 			</control>
@@ -162,7 +163,7 @@
 				<top>0</top>
 				<width>405</width>
 				<height>600</height>
-				<texture background="true" fallback="$PARAM[fallback]">$VAR[mediaImages]</texture>
+				<texture background="true" fallback="$PARAM[fallback]" colordiffuse="TextColor1">$VAR[mediaImages]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 			</control>
@@ -181,7 +182,7 @@
 				<width>405</width>
 				<height>600</height>
 				<texture background="true" fallback="$PARAM[fallback]">$VAR[mediaImages]</texture>
-				<aspectratio align="center">keep</aspectratio>
+				<aspectratio align="center">scale</aspectratio>
 				<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 			</control>
 		</definition>

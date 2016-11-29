@@ -98,7 +98,7 @@
 				<top>225</top>
 				<width>405</width>
 				<height>600</height>
-				<texture fallback="$PARAM[fallback]" background="true">$VAR[mediaImages]</texture>
+				<texture fallback="$PARAM[fallback]" background="true" colordiffuse="TextColor1">$VAR[mediaImages]</texture>
 				<aspectratio aligny="center">keep</aspectratio>
 				<visible>String.StartsWith(ListItem.Icon,Default)</visible>
 			</control>
