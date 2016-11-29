@@ -441,7 +441,7 @@
 			<align>left</align>
 			<orientation>horizontal</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
-			<visible>Integer.IsGreater(Container.NumItems,0)</visible>
+			<visible>Integer.IsGreater(Container.NumItems,0) + !Skin.HasSetting(MediaInfo)</visible>
 			<animation effect="slide" time="0" start="0,0" end="0,-44" condition="String.IsEmpty(ListItem.VideoCodec) + String.IsEmpty(ListItem.VideoResolution) + String.IsEmpty(ListItem.AudioCodec)">Conditional</animation>
 
 			<!-- Duration -->

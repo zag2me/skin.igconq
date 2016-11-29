@@ -113,7 +113,7 @@
 
 	<include name="image-53">
 		<param name="fallback">DefaultVideos.png</param>
-		<param name="colordiffuse">FFFFFFFF</param>
+		<param name="colordiffuse">TextColor1</param>
 		<param name="visible">False</param>
 		<definition>
 			<control type="image">
@@ -121,7 +121,7 @@
 				<width>202</width>
 				<height>300</height>
 				<colordiffuse>$PARAM[colordiffuse]</colordiffuse>
-				<texture fallback="$PARAM[fallback]" background="true" colordiffuse="TextColor1">$VAR[mediaImages]</texture>
+				<texture fallback="$PARAM[fallback]" background="true">$VAR[mediaImages]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>$PARAM[visible]</visible>
 				<visible>String.StartsWith(ListItem.Icon,Default)</visible>
