@@ -42,8 +42,7 @@
 				<top>225</top>
 				<width>405</width>
 				<height>600</height>
-				<texture>$INFO[Container(6).ListItem.Icon]</texture>
-				<colordiffuse>OverlayColorFO</colordiffuse>
+				<texture colordiffuse="TextColor1">$INFO[Container(6).ListItem.Icon]</texture>
 				<aspectratio aligny="center">keep</aspectratio>
 				<visible>Control.IsVisible(6) + String.Contains(Container(6).ListItem.Icon,Default)</visible>
 			</control>
@@ -143,8 +142,7 @@
 						<height>96</height>
 						<bordersize>6</bordersize>
 						<aspectratio>scale</aspectratio>
-						<colordiffuse>OverlayColorNF</colordiffuse>
-						<texture>$INFO[ListItem.Icon]</texture>
+						<texture colordiffuse="TextColor1">$INFO[ListItem.Icon]</texture>
 						<animation effect="fade" start="100" end="75" condition="True">Conditional</animation>
 						<visible>String.Contains(ListItem.Icon,Default)</visible>
 					</control>
@@ -184,8 +182,7 @@
 						<height>96</height>
 						<bordersize>6</bordersize>
 						<aspectratio>scale</aspectratio>
-						<colordiffuse>OverlayColorFO</colordiffuse>
-						<texture>$INFO[ListItem.Icon]</texture>
+						<texture colordiffuse="TextColor1">$INFO[ListItem.Icon]</texture>
 						<animation effect="fade" start="100" end="75" condition="!Control.HasFocus(6)">Conditional</animation>
 						<visible>String.Contains(ListItem.Icon,Default)</visible>
 					</control>

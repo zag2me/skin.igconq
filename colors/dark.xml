@@ -1,0 +1,28 @@
+<colors>
+
+	<!-- Default colours -->
+	<color name="TextColor1">bb000000</color>
+	<color name="TextColor2">80000000</color>
+	<color name="TextColor3">44000000</color>
+	<color name="TextColor4">44000000</color>
+	<color name="DarkenColor">66FFFFFF</color>
+	<color name="OverlayColorFO">bb000000</color>
+	<color name="OverlayColorNF">55212121</color>
+	<color name="SelectedColor">FFEB9E17</color>
+	<color name="FanartDiffuse">33f1f1f1</color>
+	<color name="DiffusePosterNF">FF666666</color>
+	<color name="HomeNF">44000000</color>
+	<color name="OSDCache">33000000</color>
+	
+	<!-- Dialog colors -->
+	<color name="DialogColor1">ff000000</color>
+	<color name="DialogColor2">70000000</color>
+	<color name="DisabledColor">20000000</color>
+	<color name="InvalidColor">20000000</color>
+	<color name="DialogOverlayColorFO">ffffffff</color>
+	<color name="DialogOverlayColorNF">55f1f1f1</color>
+
+	<!-- Default overlay color -->
+	<color name="OverlayColor">ccDDDDDD</color>
+
+</colors>
