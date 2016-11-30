@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Colors -->
-	$VAR[homeUnfocused]
 	<variable name="homeUnfocused">
 		<value condition="Skin.HasSetting(AltColor)">HomeNFAlt</value>
 		<value>TextColor2</value>
@@ -605,6 +604,12 @@
 		<value>$LOCALIZE[231]</value>
 	</variable>
 
+	<!-- Skin Settings - Overlay -->
+	<variable name="overlay-color">
+		<value condition="!String.IsEmpty(Skin.String(color.overlay)) + !String.IsEqual(Skin.String(color.overlay),None)">$INFO[Skin.String(color.overlay)]</value>
+		<value>$LOCALIZE[571]</value>
+	</variable>
+
 	<!-- Skin Settings - Addons -->
 	<variable name="addon-skinshortcuts">
 		<value condition="System.HasAddon(script.skinshortcuts)">[COLOR lightgreen]v$INFO[System.AddonVersion(script.skinshortcuts)] $LOCALIZE[31093][/COLOR]</value>
@@ -620,6 +625,10 @@
 	</variable>
 	<variable name="addon-imageselect">
 		<value condition="System.HasAddon(script.image.resource.select)">[COLOR lightgreen]v$INFO[System.AddonVersion(script.image.resource.select)] $LOCALIZE[31093][/COLOR]</value>
+		<value>[COLOR red]$LOCALIZE[31092][/COLOR]</value>
+	</variable>
+	<variable name="addon-colorselect">
+		<value condition="System.HasAddon(script.skin.helper.colorpicker)">[COLOR lightgreen]v$INFO[System.AddonVersion(script.skin.helper.colorpicker)] $LOCALIZE[31093][/COLOR]</value>
 		<value>[COLOR red]$LOCALIZE[31092][/COLOR]</value>
 	</variable>
 	<variable name="addon-nextup">

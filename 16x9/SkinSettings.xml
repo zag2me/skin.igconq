@@ -297,6 +297,19 @@
 					<selected>!Skin.HasSetting(Headings)</selected>
 					<visible>ControlGroup(9).HasFocus(12)</visible>
 				</control>
+				<!-- Overlay color -->
+				<control type="button" id="1202">
+					<width>1220</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<font>Font33</font>
+					<onclick>RunScript(script.skin.helper.colorpicker,skinstring=color.overlay)</onclick>
+					<label>$LOCALIZE[31062]</label>
+					<label2>$VAR[overlay-color]</label2>
+					<visible>ControlGroup(9).HasFocus(12)</visible><!-- + System.HasAddon(script.skin.helper.colorpicker)</visible-->
+					<focusedcolor>TextColor1</focusedcolor>
+					<textcolor>TextColor2</textcolor>
+				</control>
 				<!-- Show watched indicators -->
 				<control type="radiobutton" id="1302">
 					<width>1220</width>
@@ -322,7 +335,7 @@
 					<width>1220</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
-					<label>$LOCALIZE[31095]</label>
+					<label>$LOCALIZE[31099]</label>
 					<onclick>Skin.ToggleSetting(ShowCurve)</onclick>
 					<selected>Skin.HasSetting(ShowCurve)</selected>
 					<visible>ControlGroup(9).HasFocus(12)</visible>
@@ -415,6 +428,17 @@
 					<label2>$VAR[addon-imageselect]</label2>
 					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select)">Addon.OpenSettings(script.image.resource.select)</onclick>
+					<visible>ControlGroup(9).HasFocus(14)</visible>
+				</control>
+				<control type="button" id="1406">
+					<width>1200</width>
+					<height>66</height>
+					<left>20</left>
+					<textwidth>1120</textwidth>
+					<label>$LOCALIZE[31098]</label>
+					<label2>$VAR[addon-colorselect]</label2>
+					<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+					<onclick condition="System.HasAddon(script.skin.helper.colorpicker)">Addon.OpenSettings(script.skin.helper.colorpicker)</onclick>
 					<visible>ControlGroup(9).HasFocus(14)</visible>
 				</control>
 

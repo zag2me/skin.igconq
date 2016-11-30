@@ -450,6 +450,16 @@ msgid "Alternative unfocused item color"
 msgstr ""
 
 #: /16x9/SkinSettings.xml
+msgctxt "#31098"
+msgid "Color Picker"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31099"
+msgid "Show curves"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
 msgctxt "#31095"
 msgid "Enable curves"
 msgstr ""
