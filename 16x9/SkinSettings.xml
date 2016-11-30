@@ -139,7 +139,7 @@
 					<textcolor>TextColor2</textcolor>
 				</control>
 				<!-- Main menu style -->
-				<control type="button" id="1004">
+				<control type="button" id="1003">
 					<width>1220</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -154,7 +154,7 @@
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 				<!-- Small main menu -->
-				<control type="radiobutton" id="1003">
+				<control type="radiobutton" id="1004">
 					<width>1220</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -165,7 +165,7 @@
 					<visible>String.IsEqual(Skin.String(menuStyle),vertical)</visible>
 				</control>
 				<!-- Hide submenu headings -->
-				<control type="radiobutton" id="1003">
+				<control type="radiobutton" id="1005">
 					<width>1220</width>
 					<height>66</height>
 					<textwidth>1120</textwidth>
@@ -173,6 +173,17 @@
 					<label>31053</label>
 					<onclick>Skin.ToggleSetting(HideSubmenuHeading)</onclick>
 					<selected>Skin.HasSetting(HideSubmenuHeading)</selected>
+					<visible>ControlGroup(9).HasFocus(10)</visible>
+				</control>
+				<!-- Alternative colors -->
+				<control type="radiobutton" id="1006">
+					<width>1220</width>
+					<height>66</height>
+					<textwidth>1120</textwidth>
+					<font>Font33</font>
+					<label>$LOCALIZE[31097]</label>
+					<onclick>Skin.ToggleSetting(AltColor)</onclick>
+					<selected>Skin.HasSetting(AltColor)</selected>
 					<visible>ControlGroup(9).HasFocus(10)</visible>
 				</control>
 

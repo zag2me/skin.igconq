@@ -33,7 +33,7 @@
 						<height>120</height>
 						<label>$INFO[ListItem.Label]</label>
 						<font>Font42</font>
-						<textcolor>HomeNF</textcolor>
+						<textcolor>$VAR[homeUnfocused]</textcolor>
 					</control>
 
 				</control>

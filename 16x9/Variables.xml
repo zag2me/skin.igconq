@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Colors -->
+	$VAR[homeUnfocused]
+	<variable name="homeUnfocused">
+		<value condition="Skin.HasSetting(AltColor)">HomeNFAlt</value>
+		<value>TextColor2</value>
+	</variable>
 	<variable name="SelectedColor">
 		<value>SelectedColor</value>
 		<value condition="!String.IsEmpty(Skin.String(color.selected)) + !String.IsEqual(Skin.String(color.selected),None)">$INFO[Skin.String(color.selected)]</value>

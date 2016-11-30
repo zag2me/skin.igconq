@@ -28,7 +28,7 @@
 					<height>97</height>
 					<label>[LIGHT]$INFO[ListItem.Label][/LIGHT]</label>
 					<font>Font50</font>
-					<textcolor>TextColor2</textcolor>
+					<textcolor>$VAR[homeUnfocused]</textcolor>
 				</control>
 			</itemlayout>
 

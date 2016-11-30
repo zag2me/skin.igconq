@@ -445,6 +445,11 @@ msgid "Show fanart"
 msgstr ""
 
 #: /16x9/SkinSettings.xml
+msgctxt "#31097"
+msgid "Alternative unfocused item color"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
 msgctxt "#31095"
 msgid "Enable curves"
 msgstr ""

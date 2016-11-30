@@ -38,7 +38,7 @@
 					<align>center</align>
 					<label>$INFO[ListItem.Label]</label>
 					<font>Font42</font>
-					<textcolor>HomeNF</textcolor>
+					<textcolor>$VAR[homeUnfocused]</textcolor>
 				</control>
 			</itemlayout>
 
